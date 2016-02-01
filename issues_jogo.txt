@@ -1,0 +1,10 @@
+BUGS
+plataformas-movedissas (jogador atravessa afundando as vezes)
+linhas entre tiles
+imagens grandes piscando
+
+QUERO IMPLEMENTAR
+soco, soco andando, gancho, chute pra cima pulando, ataque esmagador pra baixo
+	já tem rasteira e voadora
+fundo em parallax
+deixar de noite e colocar luzes e sombras

@@ -1,0 +1,96 @@
+Primeiro fiz um Jogo Mobile usando a API tradicional do Unity, 3D
+
+	Scene:
+		é como se fosse uma fase do jogo, ou uma Activity, Page, Controller
+		só que você não coloca código diretamente nela, você coloca objetos nela
+
+	Hierarchy:
+		você pode visualizar em forma de árvore todos os objetos da Scene
+
+	Project:
+		pode visualizar todos os arquivos do projeto, scenes, arquivos para gráficos, scripts, etc.
+
+	Objeto:
+		objeto pode ser qualquer coisa que você queira incluir na Scene, geralmente é algo visual com um comportamento, ou um objeto vazio com um script dentro, que vai servir como o seu GameController. Você pode colocar componentes e scripts em qualquer objeto, e configurar os parâmetros pelo Inspector
+
+	Camera:
+		é um objeto para colocar na scene, até agora só coloquei uma câmera, existem 2 configurações de câmera:
+		Perspective e Ortographic, A Perspective vai deixar tudo mais em 3D, vc pode fazer um jogo de plataforma ou RPG visto de cima com essa câmera, mas vai ficar com aquele aspecto 3D, com perspectiva, uma coisa atrás da outra só vai estar atrás da outra se tiver no centro da tela; A Ortographic é mais usada para jogos 2D, aí sím, uma coisa atrás da outra sempre vai estar atrás.
+		Ainda não aprendi muito bem como trabalhar com o tamanho da câmera e a distância que ela "encherga"
+
+	Cube:
+		é um objeto 3D em forma de cubo, só isso que sei até agora
+
+	Component:
+		funcionam muito como o padrão Decorator, você adiciona vários Components em um object, cada Component vai ter uma função e você configura cada component individualmente pelo Inspector, pelo que entendi os Components são apenas do próprio Unity, você não pode criar um Component, mas pode criar um Script
+
+	Script:
+		muito parecido com um component, só que é uma classe que pode ser na linguagem C#, unityscript ou outro lá, vc pode ter scripts de linguagens diferentes no mesmo projeto, mas não vale a pena. O unityscript é um javascript modificado do unity. Até agora só fiz em C#, o pessoal na internet recomenda. Pra editar o script eu usei o MonoDevelop, e acredito que o Xamarin Studio é baseado nele, pq é muito parecido. Como o component, o script tb pode ser configurado no Inspector, basta você colocar variáveis públicas (não precisa ser property) ou métodos públicos, acho que vão funcionar como delegate para triggers de ações, alguns métodos são chamados no loop como o Update e o UpdateFix que é pra fisica, muita coisa é configurada no inspector com dragNdrop de outros objetos na scene
+
+	Mobile:
+		Qualquer projeto pode ser mobile, basta configurar o build dele, muito fácil. Pelo que vi até agora, existem 2 maneiras de controlar um jogo mobile, via touchscreen e via acelerômetro, testei os 2, muito fácil e te dá bastante liberdade, porém para fazer um jogo multiplataforma existem meios mais fáceis...
+
+Agora um jogo mobile usando o 2D, que é relativamente novo no Unity, mas acho que é mais fácil que o 3D
+
+	2D: 
+		Logo quando vc vai criar um jogo ele já te pergunta se vai ser 3D ou 2D, e então ele já configura varias coisas default para 3D, porém, você pode alterar isso livremente, um jogo pode ser 3D e 2D ao mesmo tempo.
+
+	Scene 2D:
+		você pode editar a mesma Scene em 2D ou em 3D, é só questão de comodidade
+
+	Sprite:
+		arquivos de imagem
+
+	Sprite Mode Multiple:
+		uma imagem com vários desenhos dentro, geralmente usado pra animação, você altera o modo e clica em Sprite Editor para cortar as imagens, muito fácil
+
+	Pixels Per Unit:
+		eu não estou muito bom nisso ainda, mais influencia o tamanho da imagem e resolução
+
+	Filter Mode:
+		para pixel art precisa ser Point
+
+	Layer:
+		é usado para classificar um tipo de objeto na scene, mais usado na lógica e não visualmente
+
+	Sorting Layer:
+		é usado para ordenar visualmente qual objeto vai ficar acima de qual, é uma propriedade do component Sprite Renderer, você cria vários layers pra ficar mais fácil de ordenar, mas dentro do layer vc tb pode ordenar usando o Order in Layer
+
+	Canvas:
+		é uma outra "parte" da Scene, não interage com o restante, é usado apenas para coisas que ficam fixas na tela, como score ou botões pra controles mobile
+
+	Prefab:
+		vc cria um objeto e cria um prefab desse objeto para poder usar uma cópia dele sempre, como se fosse um template, vc pode atualizar o prefab tb apartir de um objeto alterado
+
+	Phisics:
+		Existem componentes de Phisics 3D e 2D, muito fácil de confundir os 2 na hora de usar, então precisa pegar os com o nome 2D, vc coloca o componente de phisics e altera suas propriedades e coloca tb os Colliders, que tb existe o 3D e 2D. setá a posição e forma do Collider e pode dizer se vão interagir normalmente com colisão ou se vai executar um método ao colidir.
+
+Um jogo de verdade de plataforma 2D mobile:
+
+	Animator:
+		ainda não entendo muito bem, mas é onde você controla quando cada animação será executada em um Objeto
+
+	Asset Store:
+		é uma loja de diversos assets prontos pra importar no jogo, tem pagos e gratuitos, mas antes não podia colocar gratuitos por isso tem muito menos gratúitos do que pagos. Tem gráficos, Scripts, plugins do Unity, vc importa e vem um monte de coisa pra dentro do seu project que você pode ou não usar.
+
+	CNControls:
+		é um item gratis da Asset Store para colocar controles mobile no Canvas, ele te ajuda muito a deixar o jogo multiplataforma pq no Script vc vai poder interpretar tanto como um botão do teclado como um botão da tela
+
+	Acrocatic:
+		é um item gratis da Asset Store para jogo de plataforma, muito versátil e com várias opções, porém possui alguns bugs, tive que alterar uns Scripts, e isso é bom de importar da Asset Store, vc pega o código fonte mesmo e altera dentro do seu jogo
+
+	TileMaster:
+		é um item gratis da Asset Store para criar jogos baseados em Tiles, porém, existe um bug no unity que está foda de resolver, fica um vãozinho entre os tiles
+
+Estudo futuro:
+
+	BUGS
+		plataformas-movedissas (jogador atravessa afundando as vezes)
+		linhas entre tiles
+		imagens grandes piscando
+
+	QUERO IMPLEMENTAR
+		soco, soco andando, gancho, chute pra cima pulando, ataque esmagador pra baixo
+			já tem rasteira e voadora
+		fundo em parallax, existe alguns tutoriais na internet
+		deixar de noite e colocar luzes e sombras, existe um item grátis na Asset Store pra fazer luzes dinâmicas muito foda
